@@ -19,8 +19,8 @@ public class PingController {
     @PostMapping(path = "/collect")
     public String collect(@RequestBody TokenRequest request) {
         List<String> tokens = request.tokens();
-        List<String> collect = tokens.stream().collect(CustomCollectors.duplicateConsecutiveElements());
+        List<String> collect = tokens.stream().collect(CustomCollectors.duplicateElements());
 
-        return "Duplicate consecutive tokens: " + collect;
+        return "Duplicate tokens: " + collect;
     }
 }
