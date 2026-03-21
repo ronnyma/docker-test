@@ -29,8 +29,8 @@ public class PingController {
         LOGGER.debug("Tokens: {}", tokens);
 
         List<String> collect = tokens.stream().collect(CustomCollectors.duplicateConsecutiveElements());
-        LOGGER.info("Found {} duplicate tokens: {}", collect.size(), collect);
+        LOGGER.info("Found {} duplicate, consecutive tokens: {}", collect.size(), collect);
 
-        return "Duplicate tokens: " + collect;
+        return "Duplicate, consecutive tokens: " + collect;
     }
 }
