@@ -28,7 +28,7 @@ public class PingController {
         LOGGER.info("Received collect request with {} tokens", tokens.size());
         LOGGER.debug("Tokens: {}", tokens);
 
-        List<String> collect = tokens.stream().collect(CustomCollectors.duplicateElements());
+        List<String> collect = tokens.stream().collect(CustomCollectors.duplicateConsecutiveElements());
         LOGGER.info("Found {} duplicate tokens: {}", collect.size(), collect);
 
         return "Duplicate tokens: " + collect;
